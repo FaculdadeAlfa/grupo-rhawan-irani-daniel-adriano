@@ -17,5 +17,7 @@ public class Circulo {
 	public Double getPerimetro() {
 		return this.raio * 2 * PI;
 	}
+	
+	//test
 
 }
