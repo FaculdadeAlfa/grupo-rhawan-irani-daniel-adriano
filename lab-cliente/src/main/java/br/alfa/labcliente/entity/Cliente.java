@@ -6,6 +6,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.br.CNPJ;
@@ -14,10 +17,14 @@ import org.hibernate.validator.constraints.br.CPF;
 @Entity
 public class Cliente {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
 	private String nome;
 	
-	@CPF
-	@CNPJ
+	//@CPF
+	//@CNPJ
 	private String cpfCnpj;
 	
 	@Enumerated(EnumType.STRING)
