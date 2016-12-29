@@ -1,18 +1,14 @@
 package br.alfa.labcliente.entity;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-import org.hibernate.validator.constraints.br.CNPJ;
-import org.hibernate.validator.constraints.br.CPF;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Cliente {
@@ -30,11 +26,11 @@ public class Cliente {
 	@Enumerated(EnumType.STRING)
 	private TipoPessoa tipoPessoa;
 	
-	@OneToMany(cascade=CascadeType.DETACH)
-	private List<Telefone> telefones;
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private Telefone telefone;
 	
-	@OneToMany(cascade=CascadeType.DETACH)
-	private List<Endereco> enderecos;
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private Endereco endereco;
 
 	public String getNome() {
 		return nome;
@@ -60,12 +56,20 @@ public class Cliente {
 		this.tipoPessoa = tipoPessoa;
 	}
 
-	public List<Telefone> getTelefones() {
-		return telefones;
+	public Telefone getTelefone() {
+		return telefone;
 	}
 
-	public List<Endereco> getEnderecos() {
-		return enderecos;
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
 	}
-	
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
 }

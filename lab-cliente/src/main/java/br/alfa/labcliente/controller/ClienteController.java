@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.alfa.labcliente.entity.Cliente;
 import br.alfa.labcliente.entity.TipoPessoa;
+import br.alfa.labcliente.entity.UF;
 import br.alfa.labcliente.form.validator.ClienteFormValidator;
 import br.alfa.labcliente.repository.ClienteRepository;
 
@@ -47,6 +48,7 @@ public class ClienteController {
 	public String cadastroCliente(Model model) {
 		model.addAttribute("cliente", new Cliente());
 		model.addAttribute("tiposPessoa", TipoPessoa.values());
+		model.addAttribute("ufs", UF.values());
 		return "cadastroCliente";
 	}
 	
