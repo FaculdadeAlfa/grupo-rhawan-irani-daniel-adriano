@@ -1,4 +1,0 @@
-deploy:
-  provider: heroku
-  api_key: 30fea6eb-d60e-4911-9417-a4958a6c9587
-    app: lab-cliente
