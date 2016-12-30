@@ -245,7 +245,7 @@
 							<form:errors path="telefone.celular" class="control-label" />
 						</div>
 					</div>
-				</spring:bind></br></br>
+				</spring:bind><br><br>
 
 				<div class="form-group" style="text-align: center; padding: 0 0 0 35%">
 						<button type="submit" class="btn-lg btn-primary pull-left" style="width: 200px; text-align: center;">Salvar</button>
