@@ -29,29 +29,22 @@
 			<table id="tableClient" class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th class="col-sm-1" data-field="tipoPessoa">Pessoa</th>
-						<th class="col-sm-3" data-field="estado">Estado</th>
 						<th class="col-sm-3" data-field="nome">Nome</th>
+						<th class="col-sm-3" data-field="nome">CPF / CNPJ</th>
+						<th class="col-sm-2" data-field="tipoPessoa">Tipo Pessoa</th>
 						<th class="col-sm-2" data-field="telefone">Telefone</th>
-						<th class="col-sm-2" data-field="celular">Celular</th>
-						<th class="col-sm-2" data-field="endereco">Endereço</th>
-						<th class="col-sm-2" data-field="bairro">Bairro</th>
-						<th class="col-sm-2" data-field="cep">CEP</th>
 						<th class="col-sm-2" data-field="cidade">Cidade</th>
+						<th class="col-sm-1" data-field="estado">UF</th>
 					</tr>
 				</thead>
 				<c:forEach items="${clientes}" var="cliente">
 					<tr>
-						<td>${cliente.tipoPessoa}</td>
-						<td>${cliente.endereco.uf}</td>
 						<td>${cliente.nome}</td>
+						<td>${cliente.cpfCnpj}</td>
+						<td>${cliente.tipoPessoa}</td>
 						<td>${cliente.telefone.fixo}</td>
-						<td>${cliente.telefone.celular}</td>
-						<td>${cliente.endereco.logradouro}Número
-							${cliente.endereco.numero}</td>
-						<td>${cliente.endereco.bairro}</td>
-						<td>${cliente.endereco.cep}</td>
 						<td>${cliente.endereco.cidade}</td>
+						<td>${cliente.endereco.uf}</td>
 					</tr>
 				</c:forEach>
 			</table>
