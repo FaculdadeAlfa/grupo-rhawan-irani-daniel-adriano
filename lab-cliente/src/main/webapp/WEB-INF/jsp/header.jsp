@@ -15,20 +15,18 @@
 
 	<nav class="navbar navbar-inverse">
 		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand">Cadastro de Cliente</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="${pageContext.request.contextPath}/">Pesquisa</a></li>
-					<li><a href="${pageContext.request.contextPath}/cadastroCliente">Novo Cadastro</a></li>
-				</ul>
+			<div class="navbar-header" style="font: 8px; color: white; padding: 12px 0 0 0; text-align: center;">
+				Cadastro de Cliente - Faculdades Alfa - Trabalho para Gestão de Configuração e mudança de Software
 			</div>
 		</div>
 	</nav>
 	
+	
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script src="resources/js/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap/js/moment.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
 	<script type="text/javascript" src="js/labcliente.js"></script>
 	
 </body>
