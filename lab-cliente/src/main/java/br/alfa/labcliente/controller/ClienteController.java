@@ -2,6 +2,8 @@ package br.alfa.labcliente.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.alfa.labcliente.entity.Cliente;
@@ -52,14 +53,13 @@ public class ClienteController {
 		return "cadastroCliente";
 	}
 	
-	@RequestMapping(value="/clientes", method=RequestMethod.POST)
-	public String salvarCliente(@ModelAttribute("cliente") Cliente cliente,
+	@PostMapping(value="/clientes")
+	public String salvarCliente(@Valid Cliente cliente,
 			BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes) {
 		logger.info("Salvando cliente: {}", cliente);
-		
 		if(result.hasErrors()) {
-			
+			return "cadastroCliente";
 		} else {
 			clienteRepository.save(cliente);
 			redirectAttributes.addFlashAttribute("msg", "Registro salvo com sucesso!");
