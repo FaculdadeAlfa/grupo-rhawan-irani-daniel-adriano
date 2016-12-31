@@ -23,6 +23,7 @@ public class Endereco {
 	
 	private String bairro;
 	
+	@NotEmpty
 	private String cidade;
 	
 	private String numero;
